@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row" style="background-color: bisque;">
+    <div class="col-1"><a class="navbar-brand" href="#">Store</a></div>
+    <div class="col-9"><input class="form-control" type="search" placeholder="Search" ></div>
+    <div class="col-2 text-right">
+      <a class="nav-item " href="#"><i class="fas fa-user"></i> Account</a> &nbsp;
+      <a class="nav-item " href="#"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </div>
+  <div class="row" style="background-color: bisque;">
+    <div class="col-1"></div>
+    <div class="col-10 text-center" style="font-size: 20px;">
+      <a class="nav-item" href="#"> Electronics</a>
+      <a class="nav-item" href="#"> Housing</a>
+      <a class="nav-item" href="#"> Food</a>
+      <a class="nav-item" href="#"> Personal</a>
+      <a class="nav-item" href="#"> Housing</a>
+      <a class="nav-item" href="#"> Food</a>
+      <a class="nav-item" href="#"> Personal</a></div>
+    <div class="col-1">
+    </div>
+  </div>
+
+  <div class="row" > &nbsp;</div>
+
+  <div class="row">
+    <!-- Filter -->
+    <div class="col-2">
+      <mat-card style="text-align: center; height: 800px;">
+        Filters <br><br>
+        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Price</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
+        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Choices</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
+        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Distance</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-8"><h5>Brands</h5><mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+            <mat-radio-button value="1">Option 3</mat-radio-button>
+            <mat-radio-button value="2">Option 4</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      </mat-card>
+    </div>
+  
+    <div class="col-10">
+      <mat-card style="text-align: center; height: 800px;">
+        <h1>Products</h1>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4"></div>
+          <div class="col-4">
+            <mat-paginator [length]="100"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+          </div>
+        </div>
+        <br><mat-divider></mat-divider><br>
+        <div class="row">
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+        </div>
+        <br><mat-divider></mat-divider><br>
+        <div class="row">
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+        </div>
+        <br><mat-divider></mat-divider><br>
+        <div class="row">
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+        </div>
+        <br><mat-divider></mat-divider><br>
+        <div class="row">
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-4"><mat-card>Object</mat-card></div>
+        </div>
+        <br><mat-divider></mat-divider><br>
+      </mat-card>
+    </div>
+    
+  </div> 
+</div>
+
