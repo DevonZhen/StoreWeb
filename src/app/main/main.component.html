@@ -1,91 +1,130 @@
-<div class="container-fluid">
-  <div class="row" style="background-color: bisque;">
-    <div class="col-1"><a class="navbar-brand" href="#">Store</a></div>
-    <div class="col-9"><input class="form-control" type="search" placeholder="Search" ></div>
-    <div class="col-2 text-right">
-      <a class="nav-item " href="#"><i class="fas fa-user"></i> Account</a> &nbsp;
-      <a class="nav-item " href="#"><i class="fas fa-shopping-cart"></i></a>
-    </div>
+<div class="text-center"><h1>Customers</h1></div>
+<div class="row text-center">
+  <div class="col-2 text-left" style="padding-left: 50px">
+    <button mat-raised-button color="primary">Update Stores</button><br /><br />
+    <button mat-raised-button color="primary">Update/Add Customers?</button
+    ><br /><br />
   </div>
-  <div class="row" style="background-color: bisque;">
-    <div class="col-1"></div>
-    <div class="col-10 text-center" style="font-size: 20px;">
-      <a class="nav-item" href="#"> Electronics</a>
-      <a class="nav-item" href="#"> Housing</a>
-      <a class="nav-item" href="#"> Food</a>
-      <a class="nav-item" href="#"> Personal</a>
-      <a class="nav-item" href="#"> Housing</a>
-      <a class="nav-item" href="#"> Food</a>
-      <a class="nav-item" href="#"> Personal</a></div>
-    <div class="col-1">
-    </div>
-  </div>
-
-  <div class="row" > &nbsp;</div>
-
-  <div class="row">
-    <!-- Filter -->
-    <div class="col-2">
-      <mat-card style="text-align: center; height: 800px;">
-        Filters <br><br>
-        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Price</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
-        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Choices</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
-        <div class="row"><div class="col-2"></div><div class="col-8"><h5>Distance</h5><mat-slider></mat-slider></div><div class="col-2"></div></div>
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col-8"><h5>Brands</h5><mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Option 1</mat-radio-button>
-            <mat-radio-button value="2">Option 2</mat-radio-button>
-            <mat-radio-button value="1">Option 3</mat-radio-button>
-            <mat-radio-button value="2">Option 4</mat-radio-button>
-            </mat-radio-group>
-          </div>
-          <div class="col-2"></div>
-        </div>
-      </mat-card>
-    </div>
-  
-    <div class="col-10">
-      <mat-card style="text-align: center; height: 800px;">
-        <h1>Products</h1>
-        <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4"></div>
-          <div class="col-4">
-            <mat-paginator [length]="100"
-            [pageSize]="10"
-            [pageSizeOptions]="[5, 10, 25, 100]">
-            </mat-paginator>
+  <div class="col-8">
+    <mat-accordion>
+      <!-- Version 2 -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Customer Id: 11489 &nbsp;&nbsp;&nbsp; Devon Zhen
+          </mat-panel-title>
+          <mat-panel-description> </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="row text-left">
+          <div class="col-3">Phone: 609-936-8398</div>
+          <div class="col-3">Email: dz91@gmail.com</div>
+          <div class="col-3">Street: 123 Vorno Road</div>
+          <div class="col-2">Zip: 08550</div>
+          <div class="col-1">
+            <a (click)="openDialog2(true)"
+              ><i
+                class="far fa-edit fa-lg"
+                style="color: purple; cursor: pointer"
+              ></i
+            ></a>
           </div>
         </div>
-        <br><mat-divider></mat-divider><br>
+        <br />
+        <button mat-raised-button color="primary" (click)="openDialog2(false)">
+          Add Orders
+        </button>
+        <br /><br />
         <div class="row">
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
+          <div class="col-6">
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title> Order #1 </mat-panel-title>
+                <mat-panel-description
+                  >Order Id: 8888 Completed</mat-panel-description
+                >
+              </mat-expansion-panel-header>
+              <!-- <button>Store</button> -->
+              <div class="row">
+                <div class="col-6">Order Date: 2021/2/1</div>
+                <div class="col-6">
+                  Store: <a href="http:/google.com">Walmart</a>
+                </div>
+              </div>
+              <br />
+              <h5>Items:</h5>
+              <br />
+              <div class="row">
+                <div class="col-4">Item: Computer</div>
+                <div class="col-4">Quantity: 1</div>
+                <div class="col-4">Price: $1200.00</div>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <div class="col-6">
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title> Order #2</mat-panel-title>
+                <mat-panel-description>
+                  Order Id: 11489 Waiting</mat-panel-description
+                >
+              </mat-expansion-panel-header>
+              <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3">
+                  <a (click)="openDialog2(true)"
+                    ><i
+                      class="far fa-edit fa-lg"
+                      style="color: purple; cursor: pointer"
+                    ></i
+                  ></a>
+                </div>
+                <div class="col-3">
+                  <a (click)="openDialog3()"
+                    ><i
+                      class="far fa-trash-alt fa-lg"
+                      style="color: red; cursor: pointer"
+                    ></i
+                  ></a>
+                </div>
+                <div class="col-3"></div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-6">Order Date: 2021/2/1</div>
+                <div class="col-6">
+                  Store:
+                  <a
+                    (click)="openDialog()"
+                    style="color: blue; text-decoration: underline"
+                    >Best Buy</a
+                  >
+                </div>
+              </div>
+              <br />
+              <h5>Items:</h5>
+              <br />
+              <div class="row">
+                <div class="col-4 text-left">Item: RAM</div>
+                <div class="col-4 text-left">Quantity: 10000</div>
+                <div class="col-4 text-left">Price: $846.59</div>
+              </div>
+              <div class="row">
+                <div class="col-4 text-left">Item: Desktop</div>
+                <div class="col-4 text-left">Quantity: 3</div>
+                <div class="col-4 text-left">Price: $194.33</div>
+              </div>
+            </mat-expansion-panel>
+          </div>
         </div>
-        <br><mat-divider></mat-divider><br>
-        <div class="row">
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-        </div>
-        <br><mat-divider></mat-divider><br>
-        <div class="row">
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-        </div>
-        <br><mat-divider></mat-divider><br>
-        <div class="row">
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-          <div class="col-4"><mat-card>Object</mat-card></div>
-        </div>
-        <br><mat-divider></mat-divider><br>
-      </mat-card>
-    </div>
-    
-  </div> 
+      </mat-expansion-panel>
+      <br />
+    </mat-accordion>
+  </div>
+  <div class="col-2"></div>
 </div>
-
