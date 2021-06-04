@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "Store_Id": 1,
+    "Store_Name": "Walmart",
+    "Phone": "6091259437",
+    "Email": "walmart@gmail.com",
+    "Street": "Wal Mart Rd",
+    "Zip": "2684"
+  },
+  {
+    "id": 2,
+    "Store_Id": 2,
+    "Store_Name": "Best Buy",
+    "Phone": "6098463512",
+    "Email": "bestbuy@gmail.com",
+    "Street": "Best Buy Blvd",
+    "Zip": "6658"
+  },
+  {
+    "id": 3,
+    "Store_Id": 3,
+    "Store_Name": "MicroCenter",
+    "Phone": "6092226945",
+    "Email": "microcenter@gmail.com",
+    "Street": "Micro Center Blvd",
+    "Zip": "78459"
+  }
+]

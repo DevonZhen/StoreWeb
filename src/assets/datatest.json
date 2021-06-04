@@ -1,0 +1,24 @@
+{
+  "id": 2,
+  "orderId": 8888,
+  "orderStatus": "Completed",
+  "orderDate": "2021-02-01",
+  "orderItems": [
+    {
+      "id": 5,
+      "ordersItemsId": 4,
+      "item": "RAM",
+      "quantity": 10000,
+      "price": 846.59,
+      "orderId": 84962
+    },
+    {
+      "id": 6,
+      "ordersItemsId": 5,
+      "item": "Desktop",
+      "quantity": 3,
+      "price": 194.33,
+      "orderId": 84962
+    }
+  ]
+}
