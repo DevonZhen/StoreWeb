@@ -12,7 +12,7 @@ export class DataService {
 
   //SELECT ALL CUSTOMERS DATA
   getCustomerData(): Observable<any> {
-    return this.http.get("assets/test.json  ");
+    return this.http.get("assets/fulldata.json");
     // return this.http.get(this.hostURL+"/customerAll");
   }
 

@@ -14,14 +14,7 @@
         "orderId": 84962,
         "orderStatus": "Waiting",
         "orderDate": "2020-09-01",
-        "store": {
-          "id": 2,
-          "storeName": "Best Buy",
-          "phone": "6098463512",
-          "email": "bestbuy@gmail.com",
-          "street": "Best Buy Blvd",
-          "zip": 66584
-        },
+        "storeId": 1,
         "customerId": 11489,
         "orderItems": [
           {
@@ -43,36 +36,20 @@
         ]
       },
       {
-        "id": 3,
-        "orderId": 84962,
-        "orderStatus": "Waiting",
-        "orderDate": "2020-09-01",
-        "storeId": {
-          "id": 2,
-          "storeId": 2,
-          "storeName": "Best Buy",
-          "phone": "6098463512",
-          "email": "bestbuy@gmail.com",
-          "street": "Best Buy Blvd",
-          "zip": 66584
-        },
+        "id": 2,
+        "orderId": 8888,
+        "orderStatus": "Completed",
+        "orderDate": "2021-02-01",
+        "storeId": 2,
         "customerId": 11489,
         "orderItems": [
           {
-            "id": 5,
-            "ordersItemsId": 4,
-            "item": "RAM",
-            "quantity": 10000,
-            "price": 846.59,
-            "orderId": 84962
-          },
-          {
-            "id": 6,
-            "ordersItemsId": 5,
-            "item": "Desktop",
-            "quantity": 3,
-            "price": 194.33,
-            "orderId": 84962
+            "id": 4,
+            "ordersItemsId": 3,
+            "item": "Computer",
+            "quantity": 1,
+            "price": 1200.0,
+            "orderId": 8888
           }
         ]
       },
@@ -81,15 +58,7 @@
         "orderId": 1111,
         "orderStatus": "Canceled",
         "orderDate": "2021-01-01",
-        "storeId": {
-          "id": 3,
-          "storeId": 3,
-          "storeName": "MicroCenter",
-          "phone": "6098463512",
-          "email": "microcenter@gmail.com",
-          "street": "Micro Center Blvd",
-          "zip": 78459
-        },
+        "storeId": 1,
         "customerId": 11489,
         "orderItems": [
           {
@@ -111,5 +80,16 @@
         ]
       }
     ]
+  },
+  {
+    "id": 1,
+    "customerId": 77651,
+    "firstName": "Lauren",
+    "lastName": "Taka",
+    "phone": "6091329998",
+    "email": "lts32@gmail.com",
+    "street": "26 Baoler Road",
+    "zip": 15946,
+    "orders": []
   }
 ]

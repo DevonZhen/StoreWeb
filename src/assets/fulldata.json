@@ -14,103 +14,27 @@
         "orderId": 84962,
         "orderStatus": "Waiting",
         "orderDate": "2020-09-01",
-        "store": {
-          "id": 2,
-          "storeName": "Best Buy",
-          "phone": "6098463512",
-          "email": "bestbuy@gmail.com",
-          "street": "Best Buy Blvd",
-          "zip": 66584
-        },
+        "storeId": 1,
         "customerId": 11489,
         "orderItems": [
           {
             "id": 5,
-            "ordersItemsId": 4,
+            "orderItemsId": 4,
             "item": "RAM",
             "quantity": 10000,
             "price": 846.59,
-            "orderId": 84962
-          },
-          {
-            "id": 6,
-            "ordersItemsId": 5,
-            "item": "Desktop",
-            "quantity": 3,
-            "price": 194.33,
             "orderId": 84962
           }
         ]
       },
       {
         "id": 4,
-        "orderId": 1111,
-        "orderStatus": "Canceled",
-        "orderDate": "2021-01-01",
-        "store": {
-          "id": 3,
-          "storeName": "MicroCenter",
-          "phone": "6092226945",
-          "email": "microcenter@gmail.com",
-          "street": "Micro Center Blvd",
-          "zip": 78459
-        },
-        "customerId": 11489,
-        "orderItems": [
-          {
-            "id": 1,
-            "ordersItemsId": 1,
-            "item": "Camera",
-            "quantity": 1,
-            "price": 11.94,
-            "orderId": 1111
-          },
-          {
-            "id": 2,
-            "ordersItemsId": 2,
-            "item": "Chips",
-            "quantity": 2,
-            "price": 21.0,
-            "orderId": 1111
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "orderId": 8888,
+        "orderId": 11111,
         "orderStatus": "Completed",
-        "orderDate": "2021-02-01",
-        "store": {
-          "id": 1,
-          "storeName": "Walmart",
-          "phone": "6081259437",
-          "email": "walmart@gmail.com",
-          "street": "Wal Mart Rd",
-          "zip": 2684
-        },
-        "customerId": 11489,
-        "orderItems": [
-          {
-            "id": 4,
-            "ordersItemsId": 3,
-            "item": "Computer",
-            "quantity": 1,
-            "price": 1200.0,
-            "orderId": 8888
-          }
-        ]
+        "orderDate": "2020-08-01",
+        "storeId": 2,
+        "customerId": 11489
       }
     ]
-  },
-  {
-    "id": 1,
-    "customerId": 77651,
-    "firstName": "Lauren",
-    "lastName": "Taka",
-    "phone": "6091329998",
-    "email": "lts32@gmail.com",
-    "street": "26 Baoler Road",
-    "zip": 15946,
-    "orders": []
   }
 ]

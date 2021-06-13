@@ -23,6 +23,7 @@ import { MainComponent } from "./main/main.component";
 import { MainDialogComponent } from "./main-dialog/main-dialog.component";
 import { Dialog2Component } from "./utilities/dialog2/dialog2.component";
 import { Dialog3Component } from "./utilities/dialog3/dialog3.component";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { Dialog3Component } from "./utilities/dialog3/dialog3.component";
     MainDialogComponent,
     Dialog2Component,
     Dialog3Component,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
