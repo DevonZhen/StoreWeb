@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   onSubmit() {
     console.log("Hello");
     //Display Reactive Form's JSON Values
-    // console.log("Form Data: " + JSON.stringify(this.customerForm.value));
+    console.log("Form Data: " + JSON.stringify(this.customerForm.value));
   }
 
   //Display JSON Data
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
         orderDate: [""],
         storeId: [""],
         customerId: [""],
-        // orderItems: this.buildOrderItemsForm(),
+        orderItems: this.buildOrderItemsForm(),
       })
     );
     return orderFormArray;
@@ -125,17 +125,17 @@ export class HomeComponent implements OnInit {
 
       //Order Items Array
       console.log("Itemz: " + JSON.stringify(element.orderItems));
-      element.orderItems.forEach((i) => {
-        const item = this.formBuilder.group({
-          id: i.id,
-          orderItemsId: i.orderItemsId,
-          item: i.item,
-          quantity: i.quantity,
-          price: i.price,
-          orderId: i.orderId,
-        });
-        this.orderItems.push(item);
-      });
+      // element.orderItems.forEach((i) => {
+      //   const item = this.formBuilder.group({
+      //     id: i.id,
+      //     orderItemsId: i.orderItemsId,
+      //     item: i.item,
+      //     quantity: i.quantity,
+      //     price: i.price,
+      //     orderId: i.orderId,
+      //   });
+      //   this.orderItems.push(item);
+      // });
     });
   }
 
