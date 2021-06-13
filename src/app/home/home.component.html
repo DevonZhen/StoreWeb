@@ -1,0 +1,272 @@
+<div class="text-center"><h1>Customers</h1></div>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-2"></div>
+
+      <div class="col-8">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Customer Id: 11489 &nbsp;&nbsp;&nbsp; Devon Zhen
+              </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row text-left">
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Id</mat-label>
+                  <input matInput formControlName="id" autocomplete="off" />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Customer Id</mat-label>
+                  <input
+                    matInput
+                    formControlName="customerId"
+                    autocomplete="off"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>First Name</mat-label>
+                  <input
+                    matInput
+                    formControlName="firstName"
+                    autocomplete="off"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Last Name</mat-label>
+                  <input
+                    matInput
+                    formControlName="lastName"
+                    autocomplete="off"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email" autocomplete="off" />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Street</mat-label>
+                  <input matInput formControlName="street" autocomplete="off" />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <mat-form-field style="width: 100%">
+                  <mat-label>Zip</mat-label>
+                  <input matInput formControlName="zip" autocomplete="off" />
+                </mat-form-field>
+              </div>
+              <div class="col-3">
+                <div class="row">
+                  <div class="col-12">
+                    <button mat-raised-button color="primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <br />
+            <!-- Orders List -->
+            <div formArrayName="orders">
+              <div
+                class="row"
+                *ngFor="let order of orders.controls; let i = index"
+                [formGroupName]="i"
+              >
+                <div class="col-10">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title> Order #1 </mat-panel-title>
+                      <mat-panel-description
+                        >Order Id: 8888 Completed</mat-panel-description
+                      >
+                    </mat-expansion-panel-header>
+
+                    <div class="row">
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Id</mat-label>
+                          <input
+                            matInput
+                            formControlName="id"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Order Id</mat-label>
+                          <input
+                            matInput
+                            formControlName="orderId"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Order Status</mat-label>
+                          <input
+                            matInput
+                            formControlName="orderStatus"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Order Date</mat-label>
+                          <input
+                            matInput
+                            formControlName="orderDate"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Store Id</mat-label>
+                          <input
+                            matInput
+                            formControlName="storeId"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4">
+                        <mat-form-field style="width: 100%">
+                          <mat-label>Customer Id</mat-label>
+                          <input
+                            matInput
+                            formControlName="customerId"
+                            autocomplete="off"
+                          />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <br />
+
+                    <!-- Items Array  -->
+                    <div>
+                      <div class="row">
+                        <div class="col-12">
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title> Items</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="row">
+                              <div class="col-10">
+                                <div class="row">
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>ID</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>Order Item ID</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>Item</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>Quantity</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>Price</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-2">
+                                    <mat-form-field style="width: 100%">
+                                      <mat-label>Order ID</mat-label>
+                                      <input matInput autocomplete="off" />
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-1">
+                                <a
+                                  ><i
+                                    class="fas fa-plus"
+                                    style="color: green; cursor: pointer"
+                                  ></i
+                                ></a>
+                              </div>
+                              <div class="col-1">
+                                <a
+                                  ><i
+                                    class="fas fa-minus"
+                                    style="color: red; cursor: pointer"
+                                  ></i
+                                ></a>
+                              </div>
+                            </div>
+                          </mat-expansion-panel>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item Array  -->
+                  </mat-expansion-panel>
+                  <br />
+                </div>
+                <div class="col-1">
+                  <a (click)="addOrder()"
+                    ><i
+                      class="fas fa-plus"
+                      style="color: green; cursor: pointer"
+                    ></i
+                  ></a>
+                </div>
+                <div class="col-1">
+                  <a (click)="deleteOrder(i)"
+                    ><i
+                      class="fas fa-minus"
+                      style="color: red; cursor: pointer"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <div class="col-2"></div>
+    </div>
+  </div>
+</form>
+
+<!-- 
+  formArrayName="orderItems"
+*ngFor="let item of orderItems.controls; let x = index"
+                        [formGroupName]="x
+-->
