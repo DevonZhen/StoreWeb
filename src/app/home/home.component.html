@@ -79,7 +79,6 @@
                 </div>
               </div>
             </div>
-
             <br />
             <br />
             <!-- Orders List -->
@@ -163,10 +162,11 @@
                       </div>
                     </div>
                     <br />
-
                     <!-- Items Array  -->
-                    <div>
-                      <div class="row">
+                    <div formArrayName="items">
+                      <div class="row"
+                           *ngFor="let item of order.controls.items.controls; let j = index"
+                           [formGroupName]="j">
                         <div class="col-12">
                           <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -178,43 +178,43 @@
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>ID</mat-label>
-                                      <input matInput autocomplete="off" />
+                                      <input matInput formControlName="id" autocomplete="off" />
                                     </mat-form-field>
                                   </div>
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>Order Item ID</mat-label>
-                                      <input matInput autocomplete="off" />
+                                      <input matInput formControlName="orderItemsId" autocomplete="off" />
                                     </mat-form-field>
                                   </div>
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>Item</mat-label>
-                                      <input matInput autocomplete="off" />
+                                      <input matInput formControlName="item" autocomplete="off" />
                                     </mat-form-field>
                                   </div>
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>Quantity</mat-label>
-                                      <input matInput autocomplete="off" />
+                                      <input matInput formControlName="quantity" autocomplete="off" />
                                     </mat-form-field>
                                   </div>
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>Price</mat-label>
-                                      <input matInput autocomplete="off" />
+                                      <input matInput formControlName="price" autocomplete="off" />
                                     </mat-form-field>
                                   </div>
                                   <div class="col-2">
                                     <mat-form-field style="width: 100%">
                                       <mat-label>Order ID</mat-label>
-                                      <input matInput autocomplete="off" />
-                                    </mat-form-field>
+                                      <input matInput formControlName="orderId" autocomplete="off" />
+                                    </mat-form-field> 
                                   </div>
                                 </div>
                               </div>
                               <div class="col-1">
-                                <a
+                                <a (click)="addItem(i)"
                                   ><i
                                     class="fas fa-plus"
                                     style="color: green; cursor: pointer"
@@ -222,7 +222,7 @@
                                 ></a>
                               </div>
                               <div class="col-1">
-                                <a
+                                <a (click)="delItem(i,j)"
                                   ><i
                                     class="fas fa-minus"
                                     style="color: red; cursor: pointer"
