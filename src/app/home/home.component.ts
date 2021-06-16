@@ -1,22 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "./../services/data.service";
 import { MatDialog } from "@angular/material/dialog";
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  Form,
-  FormArray,
-} from "@angular/forms";
-import { formatDate } from "@angular/common";
+import { FormGroup, FormBuilder, FormArray } from "@angular/forms";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
+
   customerForm: FormGroup;
   orderForm: FormGroup;
+
+  customers: any[] = [];
 
   constructor(private api: DataService,
               public dialog: MatDialog,
@@ -40,15 +37,27 @@ export class HomeComponent implements OnInit {
   //Display JSON Data
   customerData() {
     this.api.getCustomerData().subscribe((data) => {
-      console.log("FULL CUSTOMER DATA: " + JSON.stringify(data));   
+      console.log("FULL CUSTOMER DATA: " + JSON.stringify(data)); 
+      this.customers = data;
       data.forEach(customer => {
-        //console.log("Loop order: " + JSON.stringify(customer.orders));
+        console.log("EACH CUSTOMER DATA: " + JSON.stringify(customer));
+        //Customer Info
+        this.customerForm.patchValue({
+          'id': customer.id,
+          'customerId': customer.id,
+          'firstName': customer.firstName,
+          'lastName': customer.lastName,
+          'phone': customer.phone,
+          'email': customer.email,
+          'street': customer.street,
+          'zip': customer.zip,
+        });   
+        //Order Info
         customer.orders.forEach(order => {
-          //console.log("Loop order: " + JSON.stringify(customer.orders));
           this.addOrder(order);
         });
-      });
 
+      });
     });
   }
 
@@ -72,8 +81,8 @@ export class HomeComponent implements OnInit {
     return this.customerForm.get("orders") as FormArray;
   }
 
-  addOrder(order?: any) {
-    console.log("Add Order...");
+  addOrder(order?: any) 
+  {
     const orderr = this.formBuilder.group({
       id: [order?order.id:''],
       orderId: [order?order.orderId:''],
@@ -86,24 +95,23 @@ export class HomeComponent implements OnInit {
     this.orders.push(orderr);
 
     let orderIndex = this.orders.length-1;
-    if (!order)
+    if (!order)                 //undefined is true (i.e, no order)
         this.addItem(orderIndex);
     else {
-        if (!order.orderItems)  //undefined is true (i.e, no items)
-            console.log("==== Order # "+JSON.stringify(order.id)+" No Items")
+        if (!order.orderItems)  //undefined is true (i.e, no item)
+            this.addItem(orderIndex);          
         else 
             order.orderItems.forEach(item => {
               this.addItem(orderIndex, item);
             });
     }
- }
+  }
 
   deleteOrder(i: any) {
     this.orders.removeAt(i);
   }
 
   addItem(orderIndex: number, item?: any) {
-    console.log("Add Item..."+JSON.stringify(item));
     const itemm = this.formBuilder.group({
       id: [item?item.id:''],
       orderItemsId: [item?item.orderItemsId:''],
