@@ -1,7 +1,7 @@
 [
   {
-    "id": 2,
-    "customerId": 11489,
+    "id": 22,
+    "customerId": 10490,
     "firstName": "Jared",
     "lastName": "Volo",
     "phone": "6098463251",
@@ -29,6 +29,44 @@
       },
       {
         "id": 4,
+        "orderId": 65959,
+        "orderStatus": "Completed",
+        "orderDate": "2020-08-01",
+        "storeId": 2,
+        "customerId": 11489
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "customerId": 11489,
+    "firstName": "Devon",
+    "lastName": "zhen",
+    "phone": "6098463251",
+    "email": "jack.zhen@gmail.com",
+    "street": "2 Roko Road",
+    "zip": 96328,
+    "orders": [
+      {
+        "id": 1,
+        "orderId": 84962,
+        "orderStatus": "Waiting",
+        "orderDate": "2020-09-01",
+        "storeId": 1,
+        "customerId": 11489,
+        "orderItems": [
+          {
+            "id": 3,
+            "orderItemsId": 4,
+            "item": "RAM",
+            "quantity": 10000,
+            "price": 846.59,
+            "orderId": 84962
+          }
+        ]
+      },
+      {
+        "id": 2,
         "orderId": 11111,
         "orderStatus": "Completed",
         "orderDate": "2020-08-01",
@@ -36,5 +74,5 @@
         "customerId": 11489
       }
     ]
-  }
+  }  
 ]

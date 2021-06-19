@@ -1,15 +1,17 @@
 <div class="text-center"><h1>Customers</h1></div>
 <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
   <div class="container-fluid">
-    <div class="row text-center">
-      <div class="col-2"></div>
 
+    <div formArrayName="customers">
+    <div class="row text-center"
+         *ngFor="let customer of customers.controls; let i = index" formGroupName={{i}}>
+      <div class="col-2"></div>
       <div class="col-8">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Customer Id: 11489 &nbsp;&nbsp;&nbsp; Devon Zhen
+                Customer Id: {{customer.value.customerId}} &nbsp;&nbsp;&nbsp; {{customer.value.firstName}} {{customer.value.lastName}}
               </mat-panel-title>
               <mat-panel-description> </mat-panel-description>
             </mat-expansion-panel-header>
@@ -81,22 +83,19 @@
             </div>
             <br />
             <br />
-            <!-- Orders List -->
+            <!-- Orders List -->           
             <div formArrayName="orders">
               <div
                 class="row"
-                *ngFor="let order of orders.controls; let i = index"
-                [formGroupName]="i"
-              >
+                *ngFor="let order of customer.controls.orders.controls; let j = index" formGroupName={{j}}>
                 <div class="col-10">
                   <mat-expansion-panel>
                     <mat-expansion-panel-header>
-                      <mat-panel-title> Order #1 </mat-panel-title>
-                      <mat-panel-description
-                        >Order Id: 8888 Completed</mat-panel-description
-                      >
+                      <mat-panel-title> Order # {{order.value.id}} </mat-panel-title>
+                      <mat-panel-description>
+                        Order Id: {{order.value.orderId}}  {{order.value.orderStatus}}
+                      </mat-panel-description>
                     </mat-expansion-panel-header>
-
                     <div class="row">
                       <div class="col-4">
                         <mat-form-field style="width: 100%">
@@ -165,8 +164,7 @@
                     <!-- Items Array  -->
                     <div formArrayName="items">
                       <div class="row"
-                           *ngFor="let item of order.controls.items.controls; let j = index"
-                           [formGroupName]="j">
+                           *ngFor="let item of order.controls.items.controls; let k = index" formGroupName={{k}}>
                         <div class="col-12">
                           <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -214,7 +212,7 @@
                                 </div>
                               </div>
                               <div class="col-1">
-                                <a (click)="addItem(i)"
+                                <a (click)="addItem(i, j)"
                                   ><i
                                     class="fas fa-plus"
                                     style="color: green; cursor: pointer"
@@ -222,7 +220,7 @@
                                 ></a>
                               </div>
                               <div class="col-1">
-                                <a (click)="delItem(i,j)"
+                                <a (click)="delItem(i, j, k)"
                                   ><i
                                     class="fas fa-minus"
                                     style="color: red; cursor: pointer"
@@ -239,7 +237,7 @@
                   <br />
                 </div>
                 <div class="col-1">
-                  <a (click)="addOrder()"
+                  <a (click)="addOrder(i)"
                     ><i
                       class="fas fa-plus"
                       style="color: green; cursor: pointer"
@@ -247,7 +245,7 @@
                   ></a>
                 </div>
                 <div class="col-1">
-                  <a (click)="deleteOrder(i)"
+                  <a (click)="delOrder(i, j)"
                     ><i
                       class="fas fa-minus"
                       style="color: red; cursor: pointer"
@@ -255,18 +253,14 @@
                   ></a>
                 </div>
               </div>
-            </div>
+            </div> 
+            <!-- Orders List-->           
           </mat-expansion-panel>
         </mat-accordion>
       </div>
-
       <div class="col-2"></div>
+    </div>
     </div>
   </div>
 </form>
 
-<!-- 
-  formArrayName="orderItems"
-*ngFor="let item of orderItems.controls; let x = index"
-                        [formGroupName]="x
--->
