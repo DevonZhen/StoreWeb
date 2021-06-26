@@ -6,25 +6,23 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class DataService {
-  hostURL: string = "http://localhost:4200/Store";
+  hostURL: string = "http://localhost:8080/Store";
 
   constructor(private http: HttpClient) {}
 
-  //SELECT ALL CUSTOMERS DATA
+  //SELECT ALL CUSTOMERS DATA // 4 Testing
   getCustomerData(): Observable<any> {
-    return this.http.get("assets/fulldata.json");
-    // return this.http.get(this.hostURL+"/customerAll");
+    // return this.http.get("assets/fulldata.json");
+    return this.http.get(this.hostURL + "/customerAll");
   }
 
-  //SELECT Specific Orders
+  //SELECT Specific Orders //Not NEEDED, 4 Testing
   getSpecificOrder(): Observable<any> {
     return this.http.get("assets/datatest.json  ");
     // return this.http.get(this.hostURL+"customerOrder/,orderId");
   }
 
-  //SELECT Specific Customer
-
-  //INSERT New Order?
+  //INSERT New Order? //Not NEEDED
   newOrder(): Observable<any> {
     return null;
     //return this.http.get(this.hostURL+"newOrder/",formData);
@@ -36,19 +34,19 @@ export class DataService {
     //return this.http.get(this.hostURL+"newCustomer/",formData);
   }
 
-  //UPDATE Order
+  //UPDATE Order //Not NEEDED
   updateOrder(): Observable<any> {
     return null;
     //return this.http.get(this.hostURL+"updateOrder/", formData);
   }
 
   //UPDATE Customer
-  updateCustomer(): Observable<any> {
-    return null;
-    //return this.http.get(this.hostURL+"updateOrder/", formData);
+  updateCustomer(formData: any): Observable<any> {
+    // return null;
+    return this.http.post(this.hostURL + "/updateCustomer", formData);
   }
 
-  //DELETE Order
+  //DELETE Order //Not NEEDED
   deleteOrder(): Observable<any> {
     return null;
     //return this.http.get(this.hostURL+"updateOrder/", formData);
@@ -57,7 +55,7 @@ export class DataService {
   //DELETE Customer
   deleteCustomer(): Observable<any> {
     return null;
-    //return this.http.get(this.hostURL+"updateOrder/", formData);
+    //return this.http.delete(this.hostURL+"updateOrder/", formData);
   }
 
   //Get Stores

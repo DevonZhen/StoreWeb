@@ -15,6 +15,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 //Modules
 import { AppRoutingModule } from "./app-routing.module";
@@ -23,7 +24,7 @@ import { MainComponent } from "./main/main.component";
 import { MainDialogComponent } from "./main-dialog/main-dialog.component";
 import { Dialog2Component } from "./utilities/dialog2/dialog2.component";
 import { Dialog3Component } from "./utilities/dialog3/dialog3.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HomeComponent } from './home/home.component';
     MatDividerModule,
     MatTabsModule,
     MatExpansionModule,
+    MatSnackBarModule,
     MatDialogModule,
   ],
   providers: [],

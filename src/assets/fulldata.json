@@ -1,7 +1,7 @@
 [
   {
-    "id": 22,
-    "customerId": 10490,
+    "id": 2,
+    "customerId": 11489,
     "firstName": "Jared",
     "lastName": "Volo",
     "phone": "6098463251",
@@ -24,55 +24,72 @@
             "quantity": 10000,
             "price": 846.59,
             "orderId": 84962
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "orderId": 65959,
-        "orderStatus": "Completed",
-        "orderDate": "2020-08-01",
-        "storeId": 2,
-        "customerId": 11489
-      }
-    ]
-  },
-  {
-    "id": 33,
-    "customerId": 11489,
-    "firstName": "Devon",
-    "lastName": "zhen",
-    "phone": "6098463251",
-    "email": "jack.zhen@gmail.com",
-    "street": "2 Roko Road",
-    "zip": 96328,
-    "orders": [
-      {
-        "id": 1,
-        "orderId": 84962,
-        "orderStatus": "Waiting",
-        "orderDate": "2020-09-01",
-        "storeId": 1,
-        "customerId": 11489,
-        "orderItems": [
+          },
           {
-            "id": 3,
-            "orderItemsId": 4,
-            "item": "RAM",
-            "quantity": 10000,
-            "price": 846.59,
+            "id": 6,
+            "orderItemsId": 5,
+            "item": "Desktop",
+            "quantity": 3,
+            "price": 194.33,
             "orderId": 84962
           }
         ]
       },
       {
         "id": 2,
-        "orderId": 11111,
+        "orderId": 8888,
         "orderStatus": "Completed",
-        "orderDate": "2020-08-01",
+        "orderDate": "2021-02-01",
         "storeId": 2,
-        "customerId": 11489
+        "customerId": 11489,
+        "orderItems": [
+          {
+            "id": 4,
+            "orderItemsId": 3,
+            "item": "Computer",
+            "quantity": 1,
+            "price": 1200.0,
+            "orderId": 8888
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "orderId": 1111,
+        "orderStatus": "Canceled",
+        "orderDate": "2021-01-01",
+        "storeId": 1,
+        "customerId": 11489,
+        "orderItems": [
+          {
+            "id": 1,
+            "orderItemsId": 1,
+            "item": "Camera",
+            "quantity": 1,
+            "price": 11.94,
+            "orderId": 1111
+          },
+          {
+            "id": 2,
+            "orderItemsId": 2,
+            "item": "Chips",
+            "quantity": 2,
+            "price": 21.0,
+            "orderId": 1111
+          }
+        ]
       }
     ]
-  }  
+  },
+  {
+    "id": 1,
+    "customerId": 77651,
+    "firstName": "Lauren",
+    "lastName": "Taka",
+    "phone": "6091329998",
+    "email": "lts32@gmail.com",
+    "street": "26 Baoler Road",
+    "zip": 15946,
+    "orders": []
+  }
 ]
