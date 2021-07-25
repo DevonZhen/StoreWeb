@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
 
   addCustomer(customer?: any) {
     const cust = this.formBuilder.group({
-      id: [customer ? customer.id : ""],
       customerId: [customer ? customer.customerId : ""],
       firstName: [customer ? customer.firstName : ""],
       lastName: [customer ? customer.lastName : ""],
@@ -68,7 +67,6 @@ export class HomeComponent implements OnInit {
 
   addOrder(custIndex: number, order?: any) {
     const orderr = this.formBuilder.group({
-      id: [order ? order.id : ""],
       orderId: [order ? order.orderId : ""],
       orderStatus: [order ? order.orderStatus : ""],
       orderDate: [order ? order.orderDate : ""],
@@ -106,7 +104,6 @@ export class HomeComponent implements OnInit {
 
   addItem(custIndex: number, orderIndex: number, item?: any) {
     const itemm = this.formBuilder.group({
-      id: [item ? item.id : ""],
       orderItemsId: [item ? item.orderItemsId : ""],
       item: [item ? item.item : ""],
       quantity: [item ? item.quantity : ""],
