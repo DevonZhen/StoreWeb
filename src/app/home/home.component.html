@@ -188,7 +188,7 @@
                       </div>
                       <br />
                       <!-- Items Array  -->
-                      <div formArrayName="items">
+                      <div formArrayName="orderItems">
                         <div class="row">
                           <div class="col-12">
                             <mat-expansion-panel>
@@ -198,7 +198,8 @@
                               <div
                                 class="row"
                                 *ngFor="
-                                  let item of order.controls.items.controls;
+                                  let item of order.controls.orderItems
+                                    .controls;
                                   let k = index
                                 "
                                 formGroupName="{{ k }}"

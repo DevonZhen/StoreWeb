@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
       orderDate: [order ? order.orderDate : ""],
       storeId: [order ? order.storeId : ""],
       customerId: [order ? order.customerId : ""],
-      items: this.formBuilder.array([]),
+      orderItems: this.formBuilder.array([]),
     });
     (<FormArray>(
       (<FormGroup>(<FormArray>this.customers).controls[custIndex]).controls[
@@ -119,7 +119,7 @@ export class HomeComponent implements OnInit {
               .controls["orders"]
           ))
         )).controls[orderIndex]
-      )).controls["items"]
+      )).controls["orderItems"]
     )).push(itemm);
   }
 
@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit {
               .controls["orders"]
           ))
         )).controls[orderIndex]
-      )).controls["items"]
+      )).controls["orderItems"]
     )).removeAt(itemIndex);
   }
 
