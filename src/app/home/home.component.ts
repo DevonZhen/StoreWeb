@@ -11,6 +11,9 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 export class HomeComponent implements OnInit {
   customerForm: FormGroup;
   durationInSeconds = 5;
+  delOrderIds:string="";
+  delItemIds:string="";
+
   constructor(
     private api: DataService,
     private formBuilder: FormBuilder,
@@ -123,15 +126,16 @@ export class HomeComponent implements OnInit {
     )).push(itemm);
   }
 
-  delOrder(custIndex: number, orderIndex: number) {
+  delOrder(custIndex: number, orderIndex: number, orderId:number) {
     (<FormArray>(
       (<FormGroup>(<FormArray>this.customers).controls[custIndex]).controls[
         "orders"
       ]
     )).removeAt(orderIndex);
+    this.delOrderIds = this.delOrderIds +"@" +orderId;
   }
 
-  delItem(custIndex: number, orderIndex: number, itemIndex: number) {
+  delItem(custIndex: number, orderIndex: number, itemIndex: number, itemId:number) {
     (<FormArray>(
       (<FormGroup>(
         (<FormArray>(
@@ -142,6 +146,7 @@ export class HomeComponent implements OnInit {
         )).controls[orderIndex]
       )).controls["orderItems"]
     )).removeAt(itemIndex);
+    this.delItemIds = this.delItemIds +"@" +itemId;
   }
 
   onSubmit() {
@@ -155,11 +160,12 @@ export class HomeComponent implements OnInit {
     // console.log(custId + " == formData: " + JSON.stringify(this.onSubmit()));
     // console.log("json: " + JSON.stringify(custAllData.customers));
     for (var customer in custAllData.customers) {
-      // console.log(JSON.stringify(custAllData.customers[customer].customerId));
+       // console.log(JSON.stringify(custAllData.customers[customer].customerId));
       if (custAllData.customers[customer].customerId == custId) {
-        // console.log("hello" + JSON.stringify(custAllData.customers[customer]));
+         //console.log("hello" + JSON.stringify(custAllData.customers[customer]));
         let customerD = custAllData.customers[customer];
-        this.post(customerD);
+        console.log("new date=="+JSON.stringify(this.buildNewFormValue(customerD)));
+        //this.post(customerD);
       }
     }
     // console.log("Find: " + JSON.stringify(custAllData.customers[1]));
@@ -180,7 +186,7 @@ export class HomeComponent implements OnInit {
           );
         } else {
           this._snackBar.open(
-            "Person data has been saved successfully!",
+            "Person data has not been saved successfully!",
             "close",
             {
               duration: this.durationInSeconds * 1000,
@@ -195,4 +201,14 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+  buildNewFormValue(customerD:any) {
+    var neFormValue = {};
+    neFormValue["delOrderIds"] = this.delOrderIds.substr(1);
+    neFormValue["delItemIds"]  = this.delItemIds.substr(1);
+    neFormValue["customersDTO"] = customerD;
+
+    return neFormValue;
+  }
+
 }

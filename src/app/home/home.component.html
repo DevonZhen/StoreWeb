@@ -277,7 +277,7 @@
                                   ></a>
                                 </div>
                                 <div class="col-1">
-                                  <a (click)="delItem(i, j, k)"
+                                  <a (click)="delItem(i, j, k, item.value.orderItemsId)"
                                     ><i
                                       class="fas fa-minus"
                                       style="color: red; cursor: pointer"
@@ -302,7 +302,7 @@
                     ></a>
                   </div>
                   <div class="col-1">
-                    <a (click)="delOrder(i, j)"
+                    <a (click)="delOrder(i, j, order.value.orderId)"
                       ><i
                         class="fas fa-minus"
                         style="color: red; cursor: pointer"

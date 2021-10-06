@@ -12,8 +12,8 @@ export class DataService {
 
   //SELECT ALL CUSTOMERS DATA // 4 Testing
   getCustomerData(): Observable<any> {
-    // return this.http.get("assets/fulldata.json");
-    return this.http.get(this.hostURL + "/customerAll");
+    //return this.http.get(this.hostURL + "/customerAll");
+    return this.http.get(this.hostURL + "/getCustomersList");
   }
 
   //SELECT Specific Orders //Not NEEDED, 4 Testing
@@ -42,8 +42,8 @@ export class DataService {
 
   //UPDATE Customer
   updateCustomer(formData: any): Observable<any> {
-    // return null;
-    return this.http.post(this.hostURL + "/updateCustomer", formData);
+    //return this.http.post(this.hostURL + "/updateCustomer", formData);
+    return this.http.post(this.hostURL + "/updateCustomers", formData);
   }
 
   //DELETE Order //Not NEEDED
